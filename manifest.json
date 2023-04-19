@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "500kuser.com 1.30 - Update Tab",
+    "short_name": "Addon to support for SEO. This Addon is free.",
+    "description": "500kuser.com - Chrome extension © Copyright 2023",
+    "version": "1.30",
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    },
+    "background" : {
+      "service_worker": "background.js"
+	  
+    },
+   "content_scripts": [ {
+       "all_frames": true,
+       "js": [ "jquery.min.js", "main.js" ],
+       "matches": [ "https://500kuser.com/*", "https://hidigi.org/*","https://*/*"],
+       "run_at": "document_start"
+    } ],
+    "permissions": [
+      "background",
+      "activeTab",
+      "tabs",
+      "cookies",
+	  "scripting"
+    ],
+	"host_permissions": [
+		"https://500kuser.com/",
+		"*://*/",
+		"*://*/*"
+	]
+}

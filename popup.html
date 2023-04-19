@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>500KUser - Chrome extension</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+        width: 320px;
+        height: 128px;
+      }
+
+      .field-container {
+        position: relative;
+        border: 1px solid #bcbaba;
+        height: 50px;
+        width: 95%;
+        padding-left: 12px;
+      }
+
+      .field-placeholder {
+        position: absolute;
+        top: 50%;
+        transform: translate(5px, -50%);
+        pointer-events: none;
+        transition: all 0.14s ease-in-out;
+        font-size: 18px;
+        color: #adadad;
+      }
+
+      input[type=text].field-input {
+        color: #000;
+        border: none;
+        padding: 5px;
+        margin-top: 20px;
+        font-size: 16px;
+        display: block;
+        box-sizing: border-box;
+        width: 90%;
+        bottom: 0px;
+      }
+      input[type=text].field-input:focus {
+        outline: none;
+      }
+      input[type=text].field-input.c-fix, input[type=text].field-input:focus, input[type=text].field-input:not(:placeholder-shown) {
+        border-color: transparent;
+      }
+      input[type=text].field-input.c-fix ~ label, input[type=text].field-input:focus ~ label, input[type=text].field-input:not(:placeholder-shown) ~ label {
+        color: #646669;
+        font-size: 11px;
+        top: calc(30% - .5rem);
+        transform: translate(5px, 0%);
+      }
+      input[type=text].field-input::-webkit-input-placeholder {
+        color: transparent;
+      }
+      input[type=text].field-input::-moz-placeholder {
+        color: transparent;
+      }
+      input[type=text].field-input:-ms-input-placeholder {
+        color: transparent;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p>500KUser - Chrome extension</p>
+    <div>
+      <div class="field-container">
+        <input class="field-input" id="maxopentab" name="inputName" type="text" placeholder=" " value=""/>
+        <label class="field-placeholder" for="inputName">Maximum open tab</label>
+      </div>
+      <div class="field-container">
+        <input class="field-input" id="configTimeUpPost" name="inputTimeUpPost" type="text" placeholder=" " value=""/>
+        <label class="field-placeholder" for="inputTimeUpPost">Config time auto up post</label>
+      </div>
+    </div>
+    <p>© Copyright 2023 500KUser</p>
+  </body>
+  <script src="popup.js"></script>
+</html>
+
